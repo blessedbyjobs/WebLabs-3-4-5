@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Lab 4</title>
+    <style>
+        table {
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+            padding: 5px 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="task">
+            <h2>Задание</h2>
+            Получить список студентов моложе 20 лет.
+        </div>
+        <div class="real_values">
+            <h2>Исходные данные</h2>
+            <div class="values">
+                <table>
+                    <tr>
+                        <th>id</th>
+                        <th>Студент</th>
+                        <th>Дата рождения</th>
+                    </tr>
+                    {% for person in students %}
+                    <tr>
+                        <td>{{ person.pk }}</td>
+                        <td>{{ person.surname }} {{ person.name }}</td>
+                        <td>{{ person.birthday }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+        <div class="realization">
+            <h2>Результат</h2>
+            <div class="marks">
+                <table>
+                    <tr>
+                        <th>Студент</th>
+                        <th>Дата рождения</th>
+                    </tr>
+                    {% for person in result %}
+                    <tr>
+                        <td>{{ person.surname }} {{ person.name }}</td>
+                        <td>{{ person.birthday }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>
